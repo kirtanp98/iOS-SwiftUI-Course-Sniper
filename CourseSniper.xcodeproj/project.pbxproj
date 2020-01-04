@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A006CBCB23C13AEC000BFF39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A006CBCA23C13AEC000BFF39 /* NetworkManager.swift */; };
 		A0E561FA23C121750041950C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E561F923C121750041950C /* AppDelegate.swift */; };
 		A0E561FC23C121750041950C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E561FB23C121750041950C /* SceneDelegate.swift */; };
 		A0E561FE23C121750041950C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E561FD23C121750041950C /* ContentView.swift */; };
 		A0E5620023C121780041950C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E561FF23C121780041950C /* Assets.xcassets */; };
 		A0E5620323C121780041950C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E5620223C121780041950C /* Preview Assets.xcassets */; };
 		A0E5620623C121780041950C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E5620423C121780041950C /* LaunchScreen.storyboard */; };
+		A0E5621123C128BC0041950C /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5621023C128BC0041950C /* CourseListView.swift */; };
+		A0E5621323C1291B0041950C /* SnipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5621223C1291B0041950C /* SnipeList.swift */; };
+		A0E5621523C12B350041950C /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5621423C12B350041950C /* Subject.swift */; };
+		A0E5621723C12FFC0041950C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5621623C12FFC0041950C /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A006CBCA23C13AEC000BFF39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A0E561F623C121750041950C /* CourseSniper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseSniper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E561F923C121750041950C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0E561FB23C121750041950C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,10 @@
 		A0E5620223C121780041950C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0E5620523C121780041950C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0E5620723C121780041950C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0E5621023C128BC0041950C /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
+		A0E5621223C1291B0041950C /* SnipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnipeList.swift; sourceTree = "<group>"; };
+		A0E5621423C12B350041950C /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		A0E5621623C12FFC0041950C /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +66,11 @@
 		A0E561F823C121750041950C /* CourseSniper */ = {
 			isa = PBXGroup;
 			children = (
+				A0E5620F23C1289D0041950C /* ViewModel */,
+				A0E5620E23C128930041950C /* Model */,
+				A0E5620D23C128860041950C /* View */,
 				A0E561F923C121750041950C /* AppDelegate.swift */,
 				A0E561FB23C121750041950C /* SceneDelegate.swift */,
-				A0E561FD23C121750041950C /* ContentView.swift */,
 				A0E561FF23C121780041950C /* Assets.xcassets */,
 				A0E5620423C121780041950C /* LaunchScreen.storyboard */,
 				A0E5620723C121780041950C /* Info.plist */,
@@ -73,6 +85,33 @@
 				A0E5620223C121780041950C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0E5620D23C128860041950C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0E561FD23C121750041950C /* ContentView.swift */,
+				A0E5621023C128BC0041950C /* CourseListView.swift */,
+				A0E5621223C1291B0041950C /* SnipeList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0E5620E23C128930041950C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0E5621423C12B350041950C /* Subject.swift */,
+				A0E5621623C12FFC0041950C /* Course.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A0E5620F23C1289D0041950C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A006CBCA23C13AEC000BFF39 /* NetworkManager.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +186,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E561FA23C121750041950C /* AppDelegate.swift in Sources */,
+				A0E5621723C12FFC0041950C /* Course.swift in Sources */,
+				A0E5621323C1291B0041950C /* SnipeList.swift in Sources */,
+				A0E5621523C12B350041950C /* Subject.swift in Sources */,
+				A006CBCB23C13AEC000BFF39 /* NetworkManager.swift in Sources */,
 				A0E561FC23C121750041950C /* SceneDelegate.swift in Sources */,
+				A0E5621123C128BC0041950C /* CourseListView.swift in Sources */,
 				A0E561FE23C121750041950C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
