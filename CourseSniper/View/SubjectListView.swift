@@ -20,7 +20,7 @@ struct SubjectListView: View {
     var body: some View {
         NavigationView {
             List(networkManager.subjects, id: \.code){ subject in
-                NavigationLink(destination: LazyView(CourseListView(courseNumber: subject.code))){
+                NavigationLink(destination: LazyView(CourseListView())){
                    Text(subject.description.lowercased().capitalized)
                 }
                 
