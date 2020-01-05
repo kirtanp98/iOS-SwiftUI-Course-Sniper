@@ -9,14 +9,10 @@
 import SwiftUI
 
 struct CourseListView: View {
-    
-    var courseNumber: String
-    
+        
     init(){
-        courseNumber = ""
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.red]
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
-        CurrentUserData.course = courseNumber
     }
         
     @ObservedObject var networkManager: CourseNetworkManager = CourseNetworkManager(subject: CurrentUserData.course)
