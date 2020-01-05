@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Subject: Identifiable, Codable {
-    var id = UUID()
-    var code: Int
+struct Subject: Codable {
+//    var id = UUID()
+    var code: String
     var description: String
     
 }

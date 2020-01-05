@@ -9,24 +9,24 @@
 import Foundation
 import Combine
 
-class NetworkManager: ObservableObject {
-    @Published var subjects: [Subject] = [Subject]()
+class CourseNetworkManager: ObservableObject {
+    @Published var course: [Course] = [Course]()
     
-    init(){
-        getAllSubjects()
+    init(subject: String){
+        getAllSubjects(subject: subject)
     }
     
-    func getAllSubjects(){
-        let urlString = "https://sis.rutgers.edu/oldsoc/subjects.json?semester=12020&campus=NB&level=U"
+    func getAllSubjects(subject: String){
+        let urlString = "http://sis.rutgers.edu/oldsoc/courses.json?semester=12020&campus=NB&level=U&subject=\(subject)"
         
         if let url = URL(string: urlString){
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
                     do {
-                        let subjects = try JSONDecoder().decode([Subject].self, from: data)
+                        let subjects = try JSONDecoder().decode([Course].self, from: data)
                         DispatchQueue.main.async {
-                            self.subjects = subjects
-                            print(subjects)
+                            self.course = subjects
+                            print(self.course)
                         }
                     } catch let error {
                         print(error)

@@ -15,13 +15,15 @@ struct CourseListView: View {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
     }
     
+    @ObservedObject var networkManager: NetworkManager = NetworkManager()
+    
     var body: some View {
         NavigationView {
-            List{
-                Text("aasd")
-                Text("aasd")
-                Text("aasd")
-
+            List(networkManager.subjects, id: \.code){ subject in
+//                Text("aasd")
+//                Text("aasd")
+//                Text("aasd")
+                Text(subject.description.lowercased().capitalized)
             }.navigationBarTitle(Text("Subjects").foregroundColor(Color.red))
         }
     }
