@@ -10,22 +10,22 @@ import SwiftUI
 
 struct CourseListView: View {
     
+    var courseNumber: String
+    
     init(){
+        courseNumber = ""
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.red]
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
+        CurrentUserData.course = courseNumber
     }
-    
-    @ObservedObject var networkManager: NetworkManager = NetworkManager()
+        
+    @ObservedObject var networkManager: CourseNetworkManager = CourseNetworkManager(subject: CurrentUserData.course)
     
     var body: some View {
-        NavigationView {
-            List(networkManager.subjects, id: \.code){ subject in
-//                Text("aasd")
-//                Text("aasd")
-//                Text("aasd")
-                Text(subject.description.lowercased().capitalized)
-            }.navigationBarTitle(Text("Subjects").foregroundColor(Color.red))
-        }
+            List(networkManager.courses, id: \.courseNumber){ course in
+
+                Text(course.title.lowercased().capitalized)
+            }.navigationBarTitle(Text("Courses").foregroundColor(Color.red))
     }
 }
 

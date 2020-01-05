@@ -26,7 +26,6 @@ class NetworkManager: ObservableObject {
                         let subjects = try JSONDecoder().decode([Subject].self, from: data)
                         DispatchQueue.main.async {
                             self.subjects = subjects
-                            print(subjects)
                         }
                     } catch let error {
                         print(error)

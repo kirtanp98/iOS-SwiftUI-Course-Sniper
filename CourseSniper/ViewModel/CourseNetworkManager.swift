@@ -10,14 +10,14 @@ import Foundation
 import Combine
 
 class CourseNetworkManager: ObservableObject {
-    @Published var course: [Course] = [Course]()
+    @Published var courses: [Course] = [Course]()
     
     init(subject: String){
         getAllSubjects(subject: subject)
     }
     
     func getAllSubjects(subject: String){
-        let urlString = "http://sis.rutgers.edu/oldsoc/courses.json?semester=12020&campus=NB&level=U&subject=\(subject)"
+        let urlString = "https://sis.rutgers.edu/oldsoc/courses.json?semester=12020&campus=NB&level=U&subject=\(subject)"
         
         if let url = URL(string: urlString){
             URLSession.shared.dataTask(with: url) { data, response, error in
@@ -25,8 +25,7 @@ class CourseNetworkManager: ObservableObject {
                     do {
                         let subjects = try JSONDecoder().decode([Course].self, from: data)
                         DispatchQueue.main.async {
-                            self.course = subjects
-                            print(self.course)
+                            self.courses = subjects
                         }
                     } catch let error {
                         print(error)
